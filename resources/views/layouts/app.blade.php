@@ -11,7 +11,7 @@
 <body class="bg-default flex w-screen h-screen font-poppins">
 
 @include('layouts.vertical-header')
-<div class="ml-20 w-full h-screen overflow-y-scroll">
+<div class="ml-20 w-full h-screen overflow-y-scroll" id="app">
     @yield('content')
 </div>
 

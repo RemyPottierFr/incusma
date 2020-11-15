@@ -14,12 +14,14 @@ module.exports = {
         colors: {
             primary: "#5A38B0",
             secondary: "#7F5DD4",
+            light: "rgba(90, 57, 176, 0.5)",
             default: "#FFFFFF",
         },
         extend: {
             colors: {
                 primary: "#5A38B0",
                 secondary: "#7F5DD4",
+                light: "rgba(90, 57, 176, 0.5)",
                 default: "#FFFFFF",
             },
             zIndex: {

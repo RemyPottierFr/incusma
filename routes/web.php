@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/dashboard', [DashboardController::class, 'clients']);
-
-Route::get('/dashboard/clients', [DashboardController::class, 'clients']);
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard/customers', [DashboardController::class, 'customers'])->name('customers');
+Route::get('/dashboard/bills', [DashboardController::class, 'bills']);
+Route::get('/dashboard/quotes', [DashboardController::class, 'quotes']);

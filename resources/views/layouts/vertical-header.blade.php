@@ -18,7 +18,8 @@
                 <h3 class="text-default text-xl font-semibold uppercase">Notifications</h3>
             </div>
         </a>
-        <a href="#" class="flex flex-no-wrap w-64 items-center hover:bg-secondary transition duration-300 ease-in">
+        <a href="{{ route('customers') }}"
+           class="flex flex-no-wrap w-64 items-center hover:bg-secondary transition duration-300 ease-in">
             <div class="w-20 h-20 p-2 text-2xl text-default text-center flex items-center justify-center">
                 <i class="fas fa-user"></i>
             </div>
