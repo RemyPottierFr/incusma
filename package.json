@@ -19,7 +19,6 @@
         "browser-sync": "^2.26.13",
         "browser-sync-webpack-plugin": "^2.2.2",
         "cross-env": "^7.0",
-        "husky": "^4.3.0",
         "jquery": "^3.2",
         "laravel-mix": "^5.0.9",
         "lodash": "^4.17.20",
@@ -34,11 +33,5 @@
         "@fortawesome/fontawesome-free": "^5.15.1",
         "npm-check-updates": "^10.0.0",
         "tailwindcss": "^1.9.6"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "npm test",
-            "pre-push": "npm test"
-        }
     }
 }
