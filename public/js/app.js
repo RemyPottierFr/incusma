@@ -4630,6 +4630,30 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && Symbol.iterator in Object(iter)) return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -4639,12 +4663,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Board",
   props: {
-    test: String
-  },
-  data: function data() {
-    return {
-      text: "hello"
-    };
+    withCheck: {
+      type: Boolean,
+      "default": true
+    },
+    users: {
+      type: Array,
+      "default": function _default() {
+        var result = [];
+
+        for (var i = 0; i < 10; i++) {
+          result = [].concat(_toConsumableArray(result), [{
+            name: "Test",
+            missions: [{
+              amount: 1000
+            }, {
+              amount: 1000
+            }, {
+              amount: 1000
+            }, {
+              amount: 1000
+            }]
+          }]);
+        }
+
+        return result;
+      }
+    },
+    data: function data() {
+      return {
+        text: "hello"
+      };
+    },
+    computed: {
+      reverseText: function reverseText() {
+        return this.text.split("").reverse().join("");
+      }
+    }
   }
 });
 
@@ -5166,11 +5221,106 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "flex" }, [
-    _vm._v("\n    " + _vm._s(_vm.test) + "\n")
-  ])
+  return _c(
+    "div",
+    { staticClass: "flex flex-col" },
+    [
+      _c(
+        "div",
+        {
+          staticClass:
+            "flex flex-no-wrap item-center relative border-b-4 border-light"
+        },
+        [
+          _vm.withCheck
+            ? _c("input", {
+                staticClass: "btn-primary check-primary w-4 h-4 mr-4",
+                attrs: { type: "checkbox" }
+              })
+            : _vm._e(),
+          _vm._v(" "),
+          _vm._m(0),
+          _vm._v(" "),
+          _vm._m(1),
+          _vm._v(" "),
+          _vm._m(2)
+        ]
+      ),
+      _vm._v(" "),
+      _vm._l(_vm.users, function(user) {
+        return _c(
+          "div",
+          { staticClass: "flex flex-no-wrap item-center relative my-2" },
+          [
+            _vm.withCheck
+              ? _c("input", {
+                  staticClass: "btn-primary check-primary w-4 h-4 mr-4",
+                  attrs: { type: "checkbox" }
+                })
+              : _vm._e(),
+            _vm._v(" "),
+            _c("div", { staticClass: "w-1/2 flex items-center" }, [
+              _c("span", [_vm._v(_vm._s(user.name))])
+            ]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "w-1/4 flex items-center justify-center" },
+              [_c("span", [_vm._v(_vm._s(user.missions.length))])]
+            ),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "w-1/4 flex items-center justify-center" },
+              [
+                _c("span", [
+                  _vm._v(
+                    _vm._s(
+                      user.missions.reduce(function(acc, val) {
+                        return (acc += val.amount)
+                      }, 0)
+                    )
+                  )
+                ])
+              ]
+            )
+          ]
+        )
+      })
+    ],
+    2
+  )
 }
-var staticRenderFns = []
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "w-1/2 flex items-center text-xl" }, [
+      _c("span", [_vm._v("Nom")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "w-1/4 flex items-center justify-center text-xl" },
+      [_c("span", [_vm._v("Missions")])]
+    )
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "w-1/4 flex items-center justify-center text-xl" },
+      [_c("span", [_vm._v("Montant")])]
+    )
+  }
+]
 render._withStripped = true
 
 

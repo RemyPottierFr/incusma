@@ -2,11 +2,11 @@
     @apply bg-light px-4 py-1 rounded relative z-1 transition-all duration-150 ease-in-out text-default m-2;
 }
 
-.btn-primary:focus{
+.btn-primary:focus {
     @apply outline-none;
 }
 
-.btn-primary:before{
+.btn-primary:before {
     @apply rounded-md absolute left-0 top-0 z-0 transition-all duration-150 ease-in-out;
     content: "";
     width: 100%;
@@ -17,8 +17,21 @@
     @apply bg-secondary;
 }
 
-.btn-primary:hover:before{
-    @apply border-2 border-primary -left-1 -top-1;
-    width: calc(100% + 0.25rem*2);
-    height: calc(100% + 0.25rem*2);
+.btn-primary:hover:before {
+    @apply border-2 border-primary -left-1 -top-1 shadow;
+    width: calc(100% + 0.5rem);
+    height: calc(100% + 0.5rem);
+}
+
+.bg-transparent {
+    background: transparent;
+}
+
+.check-primary {
+    @apply relative;
+}
+
+.check-primary:checked:after {
+    content: '';
+    @apply w-full h-full absolute left-0 top-0 bg-primary rounded-sm;
 }
