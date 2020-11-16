@@ -19,7 +19,8 @@ class Customer extends Model
         'country',
     ];
 
-    public function missions (){
-      return $this->hasMany(Mission::class);
+    public function missions()
+    {
+        return $this->hasMany(Mission::class);
     }
 }

@@ -15,14 +15,18 @@ class Mission extends Model
         'customer_id',
     ];
 
-    public function quotes (){
+    public function quotes()
+    {
         return $this->hasMany(Quote::class);
     }
-    public function bills (){
+
+    public function bills()
+    {
         return $this->hasMany(Bill::class);
     }
 
-    public function customer (){
+    public function customer()
+    {
         return $this->hasOne(Customer::class);
     }
 
