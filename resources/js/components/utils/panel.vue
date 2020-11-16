@@ -1,5 +1,5 @@
 <template>
-    <div class="rounded px-8 py-6" :class="selectedBackground">
+    <div :class="selectedBackground" class="rounded px-8 py-6">
         <slot></slot>
     </div>
 </template>

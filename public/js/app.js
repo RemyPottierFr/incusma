@@ -6495,6 +6495,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -6594,9 +6597,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/customers/' + this.customerid).then(function (res) {
-      console.log({
-        data: res.data
-      });
       _this.customer = res.data;
     })["catch"](function (err) {
       return console.log(err);
@@ -6635,6 +6635,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "panelCustomerMissions",
@@ -6651,9 +6653,6 @@ __webpack_require__.r(__webpack_exports__);
     var _this = this;
 
     axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/customers/' + this.customerid + '/missions').then(function (res) {
-      console.log({
-        data: res.data
-      });
       _this.missions = res.data;
     })["catch"](function (err) {
       return console.log(err);
@@ -20104,8 +20103,7 @@ function headerToggle() {
     var headerButton = document.getElementById('header-button');
     headerButton.addEventListener('click', function () {
       header.classList.toggle('w-20');
-      header.classList.toggle('w-64'); // headerButton.classList.toggle('w-20');
-      // headerButton.classList.toggle('w-64');
+      header.classList.toggle('w-64');
     });
   }
 }

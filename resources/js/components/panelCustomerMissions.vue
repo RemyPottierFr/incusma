@@ -20,14 +20,13 @@ export default {
     data() {
         return ({
             customer: {
-                missions:[]
+                missions: []
             }
         })
     },
     mounted() {
         axios.get('/api/customers/' + this.customerid)
             .then(res => {
-                console.log({data: res.data})
                 this.customer = res.data;
             })
             .catch(err => console.log(err))

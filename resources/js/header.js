@@ -1,12 +1,10 @@
 export function headerToggle() {
     const header = document.getElementById("header");
-    if(header){
+    if (header) {
         const headerButton = document.getElementById('header-button');
-        headerButton.addEventListener('click', ()=>{
+        headerButton.addEventListener('click', () => {
             header.classList.toggle('w-20');
             header.classList.toggle('w-64');
-            // headerButton.classList.toggle('w-20');
-            // headerButton.classList.toggle('w-64');
         })
     }
 }
