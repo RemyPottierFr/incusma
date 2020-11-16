@@ -23,10 +23,6 @@
     height: calc(100% + 0.5rem);
 }
 
-.bg-transparent {
-    background: transparent;
-}
-
 .check-primary {
     @apply relative;
 }

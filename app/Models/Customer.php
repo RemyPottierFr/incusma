@@ -18,4 +18,8 @@ class Customer extends Model
         'city',
         'country',
     ];
+
+    public function missions (){
+      return $this->hasMany(Mission::class);
+    }
 }

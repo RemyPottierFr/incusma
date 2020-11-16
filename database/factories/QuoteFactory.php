@@ -22,9 +22,10 @@ class QuoteFactory extends Factory
     public function definition()
     {
         return [
-            "link"=>"/uploads/test.pdf",
-            "amount"=>$this->faker->randomNumber(3),
-            "status"=>"accepted"
+            "link" => "/uploads/test.pdf",
+            "amount" => $this->faker->randomNumber(3),
+            "status" => "accepted",
+            "mission_id" => rand(0, 10),
         ];
     }
 }

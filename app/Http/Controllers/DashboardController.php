@@ -17,7 +17,7 @@ class DashboardController extends Controller
     {
         $customers = Customer::all();
 
-        return view('pages.dashboard.customer', ["customers" => $customers]);
+        return view('pages.dashboard.customers.index', ["customers" => $customers]);
     }
 
     public function bills()

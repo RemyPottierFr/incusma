@@ -14,7 +14,7 @@
         "db:reset": "php artisan db:wipe && npm run db:init && npm run db:seed"
     },
     "devDependencies": {
-        "axios": "^0.21",
+        "axios": "^0.21.0",
         "browser-sync": "^2.26.13",
         "browser-sync-webpack-plugin": "^2.2.2",
         "cross-env": "^7.0",

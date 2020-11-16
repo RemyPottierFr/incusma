@@ -18,6 +18,7 @@ class CreateBillsTable extends Migration
             $table->string("link");
             $table->string("amount");
             $table->string("status");
+            $table->integer("mission_id");
             $table->timestamps();
         });
     }

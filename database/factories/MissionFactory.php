@@ -2,17 +2,17 @@
 
 namespace Database\Factories;
 
-use App\Models\Bill;
+use App\Models\Mission;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-class BillFactory extends Factory
+class MissionFactory extends Factory
 {
     /**
      * The name of the factory's corresponding model.
      *
      * @var string
      */
-    protected $model = Bill::class;
+    protected $model = Mission::class;
 
     /**
      * Define the model's default state.
@@ -22,10 +22,10 @@ class BillFactory extends Factory
     public function definition()
     {
         return [
-            "link" => "/uploads/test.pdf",
-            "amount" => $this->faker->randomNumber(3),
-            "status" => "accepted",
-            "mission_id" => rand(0, 10),
+            'name' => $this->faker->realText(50),
+            'status' => "created",
+            "customer_id" => rand(0, 10),
+            "amount" => rand(0, 10000),
         ];
     }
 }

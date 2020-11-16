@@ -22,13 +22,13 @@ class CustomerFactory extends Factory
     public function definition()
     {
         return [
-            'name'=>$this->faker->name,
-            'email'=>$this->faker->email,
-            'SIREN'=>$this->faker->randomNumber(9),
-            'address'=>$this->faker->address,
-            'postal_code'=>$this->faker->postcode,
-            'city'=>$this->faker->city,
-            'country'=>$this->faker->country,
+            'name' => $this->faker->name,
+            'email' => $this->faker->email,
+            'SIREN' => $this->faker->randomNumber(9),
+            'address' => $this->faker->address,
+            'postal_code' => $this->faker->postcode,
+            'city' => $this->faker->city,
+            'country' => $this->faker->country,
         ];
     }
 }

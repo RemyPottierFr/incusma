@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Bill;
 use App\Models\Customer;
+use App\Models\Mission;
 use App\Models\Quote;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -21,5 +22,6 @@ class DatabaseSeeder extends Seeder
          Bill::factory(10)->create();
          Quote::factory(10)->create();
          Customer::factory(10)->create();
+         Mission::factory(10)->create();
     }
 }

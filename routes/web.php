@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +15,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('index');
-});
+Route::view('/', 'index');
 
-Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->name("dashboard");
 Route::get('/dashboard/customers', [DashboardController::class, 'customers'])->name('customers');
-Route::get('/dashboard/bills', [DashboardController::class, 'bills']);
-Route::get('/dashboard/quotes', [DashboardController::class, 'quotes']);
+Route::get('/dashboard/customers/{id}', [CustomerController::class, 'details'])->name('customers_details');
+Route::get('/dashboard/bills', [DashboardController::class, 'bills'])->name("bills");
+Route::get('/dashboard/bills/{id}', [DashboardController::class, 'bills_details'])->name("bills_details");
+Route::get('/dashboard/quotes', [DashboardController::class, 'quotes'])->name("quotes");
+Route::get('/dashboard/quotes/{id}', [DashboardController::class, 'quotes_details'])->name("quotes_details");
+Route::get('/dashboard/missions', [DashboardController::class, 'missions'])->name("mission");
+Route::get('/dashboard/missions/{id}', [DashboardController::class, 'missions_details'])->name("mission_details");

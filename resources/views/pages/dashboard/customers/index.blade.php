@@ -7,7 +7,7 @@
             <button class="btn-primary text-xl">Ajouter un client</button>
         </div>
         <div>
-            <board test="Hello world"></board>
+            <board route="{{ route('customers') }}"></board>
         </div>
     </div>
 @endsection
