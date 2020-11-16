@@ -35,7 +35,7 @@ export default {
     mounted() {
         axios.get('/api/customers/' + this.customerid + '/missions')
             .then(res => {
-                this.missions = res.data;
+                this.missions = res.data !== "{}" ? res.data : {...this.missions};
             })
             .catch(err => console.log(err))
     },

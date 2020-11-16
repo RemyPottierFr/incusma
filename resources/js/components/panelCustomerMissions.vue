@@ -5,7 +5,7 @@
             <h5 class="text-default text-2xl">Mission{{ customer.missions.length > 1 ? 's' : '' }}</h5>
         </div>
         <div class="text-center">
-            <h3 class="text-6xl text-primary">{{ customer.missions.reduce((acc, val) => acc += +val.amount, 0) }}</h3>
+            <h3 class="text-6xl text-primary">{{ customer.missions.reduce((acc, val) => acc += +val.amount, 0) }} €</h3>
             <h5 class="text-default text-2xl">Au total</h5>
         </div>
     </panel>

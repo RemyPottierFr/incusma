@@ -8,7 +8,14 @@ class MissionController extends Controller
 {
     public function index_api()
     {
-        $mission = Mission::find(request("id"))->load('quotes')->load('bills');
-        return response()->json($mission);
+        $mission = Mission::where("customer_id", request("id"))->firstOr(function () {
+            return [];
+        });
+
+        if (count($mission)) {
+            return response()->json($mission);
+        } else {
+            return response()->json("{}");
+        }
     }
 }
